@@ -41,6 +41,7 @@ class HomePage extends StatelessWidget {
               onPressed: () => timerSnackbar(
                 context: context,
                 contentText: "A snackbar with live timer.",
+                iconPath: 'assets/undo.png',
                 afterTimeExecute: () => print("Operation Execute."),
                 second: 5,
               ),

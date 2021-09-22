@@ -47,7 +47,7 @@ Timer Snackbar package let you to add a beautiful live timer at snackbar to your
 1. Add the latest version of package to your pubspec.yaml (and run`dart pub get`):
 ```yaml
 dependencies:
-  timer_snackbar: ^0.0.1
+  timer_snackbar: ^0.0.2
 ```
 2. Import the package and use it in your Flutter App.
 ```dart
@@ -66,6 +66,7 @@ There are a number of properties that you can modify:
 
 - context
 - contentText
+- iconPath
 - afterExecuteMethod
 - second
 - backgroundColor
@@ -96,6 +97,7 @@ class HomePage extends StatelessWidget {
               onPressed: () => timerSnackbar(
                 context: context,
                 contentText: "A snackbar with live timer.",
+                iconPath: 'assets/undo.png',
                 afterExecuteMethod: () => print("Operation Execute."),
                 second: 5, // default value 4 second
               ),

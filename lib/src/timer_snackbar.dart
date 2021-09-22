@@ -8,6 +8,9 @@ timerSnackbar({
   /// Main body message
   required String contentText,
 
+  /// action button icon path
+  required String iconPath,
+
   /// This method will execute after time finish. The default time is 4 seconds.
   required void Function() afterTimeExecute,
 
@@ -74,7 +77,7 @@ timerSnackbar({
               children: [
                 const SizedBox(width: 4.0),
                 Image.asset(
-                  'assets/undo.png',
+                  iconPath,
                   width: 17.0,
                   height: 15.0,
                   alignment: Alignment.topCenter,
