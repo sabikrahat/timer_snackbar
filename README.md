@@ -47,7 +47,7 @@ Timer Snackbar package let you to add a beautiful live timer at snackbar to your
 1. Add the latest version of package to your pubspec.yaml (and run`dart pub get`):
 ```yaml
 dependencies:
-  timer_snackbar: ^0.0.2
+  timer_snackbar: ^0.0.3
 ```
 2. Import the package and use it in your Flutter App.
 ```dart
@@ -56,7 +56,7 @@ import 'package:timer_snackbar/timer_snackbar.dart';
 
 ## Preview
 
-![Preview](/sample.gif)
+![Preview](https://raw.githubusercontent.com/sabikrahat/timer_snackbar/master/sample.gif)
 
 <br>
 <br>
@@ -66,7 +66,8 @@ There are a number of properties that you can modify:
 
 - context
 - contentText
-- iconPath
+- buttonPrefixWidget
+- buttonLabel
 - afterExecuteMethod
 - second
 - backgroundColor
@@ -84,26 +85,28 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Timer Snackbar"),
       ),
-      body: Builder(
-        builder: (context) {
-          return Center(
-            child: ElevatedButton(
-              child: const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text('Show Snackbar', textScaleFactor: 1.2)),
-              style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0))),
-              onPressed: () => timerSnackbar(
-                context: context,
-                contentText: "A snackbar with live timer.",
-                iconPath: 'assets/undo.png',
-                afterExecuteMethod: () => print("Operation Execute."),
-                second: 5, // default value 4 second
-              ),
+      body: Center(
+        child: ElevatedButton(
+          child: const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text('Show Snackbar', textScaleFactor: 1.2)),
+          style: ElevatedButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8.0))),
+          onPressed: () => timerSnackbar(
+            context: context,
+            contentText: "A snackbar with live timer.",
+            buttonPrefixWidget: Image.asset(
+              'assets/undo.png',
+              width: 17.0,
+              height: 15.0,
+              alignment: Alignment.topCenter,
+              color: Colors.blue[100],
             ),
-          );
-        },
+            afterTimeExecute: () => print("Operation Execute."),
+            second: 5,
+          ),
+        ),
       ),
     );
   }

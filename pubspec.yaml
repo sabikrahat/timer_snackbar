@@ -1,6 +1,6 @@
 name: timer_snackbar
 description: A new Flutter package that helps developers to add a beautiful live timer at snackbar to their Flutter app.
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/sabikrahat/timer_snackbar
 
 environment:
